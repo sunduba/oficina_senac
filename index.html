@@ -4,25 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oficina Senac</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficina Senac</title>
-    <meta name="description" content="Page description">
+    <meta name="description" content="Oficina de Desenvolvimento de sites para carros">
     <meta name="keywords" content="keyword1, keyword2">
-    <meta property="og:title" content="Oficina Senac">
+    <meta property="og:title" content="Page Title">
     <meta property="og:description" content="Page description">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.example.com">
     <meta property="og:image" content="https://www.example.com/image.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Oficina Senac">
+    <meta name="twitter:title" content="Page Title">
     <meta name="twitter:description" content="Page description">
     <meta name="twitter:image" content="https://www.example.com/image.jpg">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/microframework.min.css">
-
+    <link rel="stylesheet" href="assets/css/microframework.css">
 </head>
 <body>
-    
+    <nav class="bem-navbar" style="background-color: rgba(255, 255, 255, 0.383);">
+        <header>
+            <a href="#" class="bem-navbar__brand">Brand</a>
+            <ul class="bem-navbar__menu">
+                <li>contato@oficina.com</li>
+                <li>11-9999-88888</li>
+            </ul>
+        </header>
+        <ul class="bem-navbar__menu">
+            <li class="bem-navbar__item">
+                <a href="#" class="bem-navbar__link bem-navbar__link--active">Home</a>
+            </li>
+            <li class="bem-navbar__item">
+                <a href="#" class="bem-navbar__link">About</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section class="bem-hero">
+            <div class="bem-hero__titulo">
+                <h1>Oficina Senac</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere itaque adipisci iste optio inventore incidunt quod natus. Cum quasi hic sapiente aut qui! Maiores dolore alias assumenda distinctio, vel ab?</p>
+                <a href="#contato" class="bem-btn bem-btn--primary">
+                    Orçamento
+                </a>"
+            </div>
+            <img src="/assets/imagens/carro/front-hero-1.png.webp"
+            width="500px" alt="Carro vermelho"
+            class="bem-hero-imagem">
+        </section>
+    </main>
+    <nav class="bem-navbar">
+        <a href="#" class="bem-navbar__brand">Brand</a>
+        <input type="checkbox" id="nav-toggle" class="bem-navbar__checkbox">
+        <label for="nav-toggle" class="bem-navbar__toggle">☰</label>
+        <ul class="bem-navbar__menu">
+            <li class="bem-navbar__item">
+                <a href="#" class="bem-navbar__link bem-navbar__link--active">Home</a>
+            </li>
+            <li class="bem-navbar__item">
+                <a href="#" class="bem-navbar__link">About</a>
+            </li>
+        </ul>
+    </nav>
+
 </body>
 </html>

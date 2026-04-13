@@ -1,88 +1,49 @@
 :root {
-  /* =========================================
-     1. COLOR TOKENS (Paleta Base)
-     ========================================= */
-  
-  /* Gray System (60% Dominance) - Base & Surfaces */
-  --rt-color-gray-900: #121212; /* Background */
-  --rt-color-gray-800: #1E1E1E; /* Card/Surface */
-  --rt-color-gray-700: #2C2C2C; /* Hover Surface */
-  --rt-color-gray-600: #333333; /* Borders/Dividers */
-  
-  /* Red System (30% Dominance) - Actions & Accents */
-  --rt-color-red-500: #E31B23; /* Primary Action */
-  --rt-color-red-600: #B2151B; /* Hover Action */
-  --rt-color-red-100: #FFEDED; /* Subtle Alert Background */
-
-  /* Pure Colors for Pattern/Text */
-  --rt-color-black: #000000;
-  --rt-color-white: #FFFFFF;
-
-  /* Text System */
-  --rt-color-text-primary: var(--rt-color-white);
-  --rt-color-text-secondary: #A0A0A0;
-  --rt-color-text-on-red: var(--rt-color-white);
-
-  /* =========================================
-     2. PATTERN TOKENS (10% Dominance)
-     ========================================= */
-  /* Um padrão xadrez gerado por CSS para uso em bordas ou detalhes */
-  --rt-pattern-checkered: 
-    linear-gradient(45deg, var(--rt-color-black) 25%, transparent 25%), 
-    linear-gradient(-45deg, var(--rt-color-black) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, var(--rt-color-black) 75%),
-    linear-gradient(-45deg, transparent 75%, var(--rt-color-black) 75%);
-  --rt-pattern-size: 10px 10px; /* Tamanho do xadrez */
-  --rt-pattern-bg: var(--rt-color-white); /* Cor de fundo do xadrez */
-
-  /* =========================================
-     3. TYPOGRAPHY TOKENS
-     ========================================= */
-  
-  /* Font Families */
-  --rt-font-family-heading: 'Oswald', sans-serif;
-  --rt-font-family-body: 'Inter', sans-serif;
-
-  /* Font Weights */
-  --rt-font-weight-regular: 400;
-  --rt-font-weight-medium: 500;
-  --rt-font-weight-semibold: 600;
-  --rt-font-weight-bold: 700;
-
-  /* Font Sizes (Major Third Scale) */
-  --rt-font-size-xs: 0.75rem;   /* 12px */
-  --rt-font-size-sm: 0.875rem;  /* 14px */
-  --rt-font-size-base: 1rem;    /* 16px */
-  --rt-font-size-lg: 1.25rem;   /* 20px */
-  --rt-font-size-xl: 1.563rem;  /* 25px */
-  --rt-font-size-2xl: 1.953rem; /* 31px */
-  --rt-font-size-3xl: 2.441rem; /* 39px */
-  --rt-font-size-display: 3.052rem; /* 49px - Para H1 de destaque */
-
-  /* Line Heights */
-  --rt-line-height-tight: 1.2;
-  --rt-line-height-base: 1.6;
-
-  /* =========================================
-     4. SPACING & LAYOUT TOKENS (8px Grid)
-     ========================================= */
-  --rt-space-1: 0.25rem; /* 4px */
-  --rt-space-2: 0.5rem;  /* 8px */
-  --rt-space-3: 0.75rem; /* 12px */
-  --rt-space-4: 1rem;    /* 16px */
-  --rt-space-5: 1.5rem;  /* 24px */
-  --rt-space-6: 2rem;    /* 32px */
-  --rt-space-8: 3rem;    /* 48px */
-  --rt-space-10: 4rem;   /* 64px */
-
-  /* =========================================
-     5. BORDER & SHADOW TOKENS
-     ========================================= */
-  --rt-border-radius-sm: 2px; /* Cantos quase vivos, mecânicos */
-  --rt-border-radius-md: 4px;
-  
-  --rt-border-width: 1px;
-  
-  /* Sombra sutil para destacar superfícies sobre o fundo preto */
-  --rt-shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  /* --- Colors --- */
+  --color-primary: #2b2b2e;     /* (60%) */
+  --color-secondary: #770d0d;   /* (30%) */
+  --color-tertiary: #000000;    /* (10%) */
+  /* Variations for depth */
+  --color-primary-light: #4e4e4e;
+  --color-tertiary-hover: #7a0808;
+  /* Semantic Colors */
+  --color-success: #27ae60;
+  --color-danger: #e90000;
+  --color-text-main: #ffffff;
+  --color-text-inverted: #1a1a1b;
+  --color-gray-muted: #828282;
+  /* --- Typography --- */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --text-xs: 0.75rem;   /* 12px */
+  --text-sm: 0.875rem;  /* 14px */
+  --text-base: 1rem;    /* 16px */
+  --text-lg: 1.25rem;   /* 20px */
+  --text-xl: 1.5rem;    /* 24px */
+  --text-2xl: 2rem;     /* 32px */
+  /* --- Spacing & Layout --- */
+  --space-unit: 8px;
+  --radius-sm: 4px;     /* Bordas levemente arredondadas para aspecto técnico */
+  --radius-md: 8px;
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  /* --- Transitions --- */
+  --transition-fast: 200ms ease;
+}
+/* Exemplo de aplicação rápida */
+body {
+  background-color: var(--color-primary);
+  color: var(--color-text-main);
+  font-family: var(--font-main);
+}
+.button-cta {
+  background-color: var(--color-tertiary);
+  color: var(--color-text-inverted);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  padding: var(--space-unit) calc(var(--space-unit) * 2);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+.button-cta:hover {
+  background-color: var(--color-tertiary-hover);
 }
