@@ -57,34 +57,46 @@ body{
   color:var(--bem-text);
   background:var(--bem-bg);
   transition:background .25s, color .25s;
+  cursor: url(../imagens/cursor/cursor.svg), auto;
+}
+a{
+    cursor: url(../imagens/cursor/cursor-ancora.svg), auto;
+    text-decoration: none;
 }
 header{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
+}
+.bem-logo{
+  position: absolute;
+  top: 0;
+  left: 50px;
+  transform: translate(0, 30px);
+  z-index: 1001;
 }
 .bem-hero{
-  /*relativo - controla a posição absoluta dos filhos*/
+  /*relativo para c ontrolar a posição absoluta dos filhos  */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80vh;
   background-image: url(../imagens/carro/fundo-hero.jpg.webp);
-  /*cover - estica // contain - mantém tamanho original*/
+   /*cover = estica e contain manter o tamanho original  */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #065f46;
+  background-color: #0f172a;
   color: var(--bem-light);
 }
-.bem-hero_titulo{
+.bem-hero__titulo{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #0e050580;
+  background-color: #0f172a6c;
   backdrop-filter: blur(15px);
   position: absolute;
   top: 0;
@@ -95,13 +107,13 @@ header{
   padding: 50px;
   gap: 20px;
 }
-.bem-hero-imagem{
+.bem-hero_imagem{
   position: absolute;
   bottom: 0;
-  right: 30%;
+  right: 20%;
   z-index: 2;
+  transform: scale(2) translate(50px, 10px);
 }
-
 .bem-container{
   width:100%;
   max-width:1200px;
@@ -265,7 +277,18 @@ header{
 .bem-navbar{
   display:flex;
   align-items:center;
-  justify-content:space-between;
+  justify-content:space-around;
+  padding:var(--bem-spacing-md) var(--bem-spacing-lg);
+  background-color:var(--bem-surface);
+  box-shadow:var(--bem-shadow-sm);
+  border-bottom:1px solid var(--bem-border);
+  transition:background .25s;
+  position:sticky; top:0; z-index:100;
+}
+.bem-navbar--secundaria{
+  display:flex;
+  align-items:center;
+  justify-content:center;
   padding:var(--bem-spacing-md) var(--bem-spacing-lg);
   background-color:var(--bem-surface);
   box-shadow:var(--bem-shadow-sm);
@@ -274,7 +297,7 @@ header{
   position:sticky; top:0; z-index:100;
 }
 .bem-navbar--dark{ background-color:var(--bem-dark);color:#fff }
-.bem-navbar__brand{ font-size:1.5rem;font-weight:700;text-decoration:none;color:inherit }
+.bem-navbar__brand{ font-size:1.5rem;font-weight:700;text-decoration:none;color:inherit;position: relative;}
 .bem-navbar__menu{ display:flex;gap:var(--bem-spacing-lg);list-style:none;align-items:center }
 .bem-navbar__item{ display:inline-flex }
 .bem-navbar__link{ text-decoration:none;color:var(--bem-text-muted);padding:var(--bem-spacing-sm);transition:color .2s }
