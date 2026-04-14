@@ -73,7 +73,8 @@ header{
   position: absolute;
   top: 0;
   left: 50px;
-  transform: translate(0, 30px);
+  /*                    x     y      */
+  transform: translate(-120px, 0);
   z-index: 1001;
 }
 .bem-hero{
@@ -84,7 +85,7 @@ header{
   justify-content: center;
   height: 80vh;
   background-image: url(../imagens/carro/fundo-hero.jpg.webp);
-   /*cover = estica e contain manter o tamanho original  */
+  /*cover = estica e contain manter o tamanho original  */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -112,7 +113,9 @@ header{
   bottom: 0;
   right: 20%;
   z-index: 2;
-  transform: scale(2) translate(50px, 10px);
+  /*      aumentar o tamnho  horizontal e vertical   
+          da equerda para direita e de cima para baixo*/
+  transform: scale(1.5) translate(50px, -30px) ;
 }
 .bem-container{
   width:100%;
