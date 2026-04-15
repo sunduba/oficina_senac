@@ -1,14 +1,14 @@
 :root {
   /* --- Colors --- */
-  --color-primary: #2b2b2e;     /* (60%) */
-  --color-secondary: #770d0d;   /* (30%) */
-  --color-tertiary: #000000;    /* (10%) */
+  --color-primary: #1a1a1b;     /* Carbon Grey (60%) */
+  --color-secondary: #ffffff;   /* Pure White (30%) */
+  --color-tertiary: #f2994a;    /* Power Gold (10%) */
   /* Variations for depth */
-  --color-primary-light: #4e4e4e;
-  --color-tertiary-hover: #7a0808;
+  --color-primary-light: #2d2d2e;
+  --color-tertiary-hover: #d4833b;
   /* Semantic Colors */
   --color-success: #27ae60;
-  --color-danger: #e90000;
+  --color-danger: #eb5757;
   --color-text-main: #ffffff;
   --color-text-inverted: #1a1a1b;
   --color-gray-muted: #828282;

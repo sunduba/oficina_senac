@@ -15,26 +15,45 @@
     <meta name="twitter:title" content="Page Title">
     <meta name="twitter:description" content="Page description">
     <meta name="twitter:image" content="https://www.example.com/image.jpg">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/microframework.css">
+    <link rel="preload" href="assets/css/microframework.css" as="style"
+        onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/microframework.css">
+    </noscript>
 </head>
 <body class="bem-cursor">
-    <nav class="bem-navbar">
+    <nav class="bem-navbar bem-container">
         <header>
             <a href="#" class="bem-navbar__brand">
                 <img src="/assets/imagens/logo/logo.svg" alt="Oficina Senac" class="bem-logo">
             </a>
             <ul class="bem-navbar__menu">
                 <li>contato@oficina.com</li>
-                <li>11-9999-88888</li>
+                <li>11-99999-9999</li>
             </ul>
         </header>
         <ul class="bem-navbar__menu">
             <li class="bem-navbar__item">
-                <a href="#" class="bem-navbar__link bem-navbar__link--active">Home</a>
+                <a href="#" class="bem-navbar__link">
+                    <svg class="bem-icon-face" fill="#000000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="-163.84 -163.84 839.68 839.68" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-163.84" y="-163.84" width="839.68" height="839.68" rx="419.84" fill="#f2994a" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="7935ec95c421cee6d86eb22ecd11b7e3"> <path style="display: inline;" d="M283.122,122.174c0,5.24,0,22.319,0,46.583h83.424l-9.045,74.367h-74.379 c0,114.688,0,268.375,0,268.375h-98.726c0,0,0-151.653,0-268.375h-51.443v-74.367h51.443c0-29.492,0-50.463,0-56.302 c0-27.82-2.096-41.02,9.725-62.578C205.948,28.32,239.308-0.174,297.007,0.512c57.713,0.711,82.04,6.263,82.04,6.263 l-12.501,79.257c0,0-36.853-9.731-54.942-6.263C293.539,83.238,283.122,94.366,283.122,122.174z"> </path> </g> </g></svg>                </a>
             </li>
             <li class="bem-navbar__item">
-                <a href="#" class="bem-navbar__link">About</a>
+                <a href="#" class="bem-navbar__link">
+                    <svg class="bem-icon-insta" fill="#f2994a" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 260 260" enable-background="new 0 0 260 260" xml:space="preserve" stroke="#f2994a"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M164.58,64H95.42C78.1,64,64,78.1,64,95.42v69.16C64,181.9,78.1,196,95.42,196h69.16c17.32,0,31.42-14.1,31.42-31.42V95.42 C196,78.1,181.9,64,164.58,64z M130,171.1c-22.66,0-41.1-18.44-41.1-41.1s18.44-41.1,41.1-41.1s41.1,18.44,41.1,41.1 S152.66,171.1,130,171.1z M172.22,97.3c-5.3,0-9.6-4.3-9.6-9.61c0-5.3,4.3-9.6,9.6-9.6c5.31,0,9.61,4.3,9.61,9.6 C181.83,93,177.53,97.3,172.22,97.3z M130,102.9c-14.94,0-27.1,12.16-27.1,27.1s12.16,27.1,27.1,27.1s27.1-12.16,27.1-27.1 S144.94,102.9,130,102.9z M130,2C59.31,2,2,59.31,2,130s57.31,128,128,128s128-57.31,128-128S200.69,2,130,2z M210,164.58 c0,25.04-20.38,45.42-45.42,45.42H95.42C70.38,210,50,189.62,50,164.58V95.42C50,70.38,70.38,50,95.42,50h69.16 C189.62,50,210,70.38,210,95.42V164.58z"></path> </g></svg>
+                </a>
+            </li>
+            <li class="bem-navbar__item">
+                <a href="#" class="bem-navbar__link">
+                    <svg class="bem-icon-tiktok" fill="#1a1a1b" width="50px" height="50px" viewBox="-3.36 -3.36 30.72 30.72" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-3.36" y="-3.36" width="30.72" height="30.72" rx="15.36" fill="#f2994a" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"></path></g></svg>
+                </a>
+            </li>
+            <li class="bem-navbar__item">
+                <a href="#" class="bem-navbar__link">
+                    <svg class="bem-icon-youtube" width="50px" height="50px" viewBox="-1.44 -1.44 26.88 26.88" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-1.44" y="-1.44" width="26.88" height="26.88" rx="13.44" fill="#f2994a" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19.67 8.14002C19.5811 7.7973 19.4028 7.48433 19.1533 7.23309C18.9038 6.98185 18.5921 6.80134 18.25 6.71001C16.176 6.4654 14.0883 6.35517 12 6.38001C9.91174 6.35517 7.82405 6.4654 5.75001 6.71001C5.40793 6.80134 5.09622 6.98185 4.84674 7.23309C4.59725 7.48433 4.41894 7.7973 4.33001 8.14002C4.10282 9.41396 3.99236 10.706 4.00001 12C3.99198 13.3007 4.10244 14.5994 4.33001 15.88C4.42355 16.2172 4.60391 16.5239 4.85309 16.7696C5.10226 17.0153 5.41153 17.1913 5.75001 17.28C7.82405 17.5246 9.91174 17.6349 12 17.61C14.0883 17.6349 16.176 17.5246 18.25 17.28C18.5885 17.1913 18.8978 17.0153 19.1469 16.7696C19.3961 16.5239 19.5765 16.2172 19.67 15.88C19.8976 14.5994 20.008 13.3007 20 12C20.0077 10.706 19.8972 9.41396 19.67 8.14002ZM10.36 14.39V9.63001L14.55 12L10.36 14.38V14.39Z" fill="#1a1a1b"></path> </g></svg>
+                </a>
+            </li>
+            <li class="bem-navbar__item">
+                <a href="#" class="bem-navbar__link"></a>
             </li>
         </ul>
     </nav>
@@ -48,10 +67,10 @@
                 </a>"
             </div>
             <img src="/assets/imagens/carro/front-hero-1.png.webp"
-            width="500px" alt="Carro vermelho"
-            class="bem-hero-imagem">
+            width="400px" alt="Carro vermelho"
+            class="bem-hero_imagem">
         </section>
-    <nav class="bem-navbar--secundaria">
+    <nav class="bem-navbar--secundaria bem-container">
         <input type="checkbox" id="nav-toggle" class="bem-navbar__checkbox">
         <label for="nav-toggle" class="bem-navbar__toggle">☰</label>
         <ul class="bem-navbar__menu">
@@ -111,7 +130,6 @@
 
     </section>
     <section>
-
     </section>
     </main>
     <footer>
