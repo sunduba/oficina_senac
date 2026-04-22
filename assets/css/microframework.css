@@ -286,14 +286,13 @@ header{
   justify-content:space-around;
   padding:var(--bem-spacing-md) var(--bem-spacing-lg);
   box-shadow:var(--bem-shadow-sm);
-  border-bottom:1px solid var(--bem-border);
   transition:background .25s;
   position:sticky;
   top:0;
-
   z-index:100;
   width: 100%;
   background-color: var(--bem-primary);
+  color: var(--bem-secondary);
 }
 .bem-navbar--secundaria{
   display:flex;
@@ -301,7 +300,6 @@ header{
   justify-content:center;
   padding:var(--bem-spacing-md) var(--bem-spacing-lg);
   box-shadow:var(--bem-shadow-sm);
-  border-bottom:1px solid var(--bem-border);
   transition:background .25s;
   position:sticky;
   top:70px;
@@ -316,7 +314,7 @@ header{
 .bem-navbar__link{ text-decoration:none;color:var(--bem-secondary);padding:var(--bem-spacing-sm);transition:color .2s }
 .bem-navbar__link:hover{ color:var(--bem-text-muted) }
 .bem-navbar__link--active{ color:var(--bem-tertiary);font-weight:600 }
-.bem-navbar__toggle{ display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--bem-text) }
+.bem-navbar__toggle{ display:none;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--bem-secondary) }
 .bem-modal{
   position:fixed;inset:0;
   background-color:rgba(0,0,0,.5);
@@ -398,19 +396,32 @@ header{
   .bem-hero__titulo{left: 0; width: 100%;}
   .bem-container--narrow{width: 100%; max-width: 768px;}
   .bem-hero_imagem{display: none;}
+  .bem-navbar--secundaria{position:fixed; top:0px;}
+  .bem-logo{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: calc(50%/2);
+    z-index: 151;
+  }
   .bem-grid--cols-2,.bem-grid--cols-3,.bem-grid--cols-4 { grid-template-columns: 1fr }
+  .bem-navbar{
+    display: none;
+  }
   .bem-navbar__menu{ display:none }
   .bem-navbar__toggle{ display:block; cursor:pointer; margin-left:auto; }
   .bem-hide-mobile{ display:none !important }
   .bem-navbar__checkbox:checked ~ .bem-navbar__menu {
     display:flex !important;
     flex-direction:column;
-    align-items: stretch;
+    align-items: center;
     position:absolute; top:100%; left:0; right:0;
-    background-color:var(--bem-surface);
+    background-color:var(--bem-bg);
     padding:var(--bem-spacing-md);
     box-shadow:var(--bem-shadow-md);
     animation:bem-slide-up 0.3s forwards;
     z-index: 1000;
+    height: 100vh;
+    font-size: 1.5rem;
   }
 }
