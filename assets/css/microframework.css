@@ -142,7 +142,7 @@ header{
 .bem-container--narrow{ max-width:600px}
 .bem-grid { display: grid; gap: var(--bem-spacing-md) }
 .bem-btn{
-  display:inline-flex;
+  display:flex;
   align-items:center;
   justify-content:center;
   padding:var(--bem-spacing-sm) var(--bem-spacing-lg);
@@ -154,10 +154,11 @@ header{
   transition:all .2s ease;
   text-decoration:none;
   gap:var(--bem-spacing-sm);
+  margin: var(--bem-spacing-lg) 0;
 }
 .bem-btn:hover{ transform:translateY(-1px);box-shadow:var(--bem-shadow-md) }
 .bem-btn:active{ transform:translateY(0) }
-.bem-btn--primary{ background-color:var(--bem-primary);color:#fff }
+.bem-btn--primary{ background-color:var(--bem-primary);color:#fff; border: 2px solid var(--bem-tertiary);}
 .bem-btn--primary:hover{ filter:brightness(.9) }
 .bem-btn--secondary{ background-color:var(--bem-secondary);color:#fff }
 .bem-btn--secondary:hover{ filter:brightness(.9) }
