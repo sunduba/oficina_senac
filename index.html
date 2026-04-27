@@ -15,14 +15,15 @@
     <meta name="twitter:title" content="Page Title">
     <meta name="twitter:description" content="Page description">
     <meta name="twitter:image" content="https://www.example.com/image.jpg">
+
     <link rel="preload" href="assets/css/microframework.css" as="style"
-        onload="this.rel='stylesheet'">
+            onload="this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="assets/css/microframework.css">
     </noscript>
 </head>
 <body class="bem-cursor">
-    <nav class="bem-navbar bem-container">
+    <nav class="bem-navbar">
         <header>
             <a href="#" class="bem-navbar__brand">
             <svg class=".bem-logo" height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.853 512.853" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
@@ -56,10 +57,13 @@
                 <path d="M75.093,469.888c-2.56,0-4.267-0.853-5.973-2.56l-23.893-23.893c-1.707-1.707-2.56-4.267-2.56-5.973 c0-2.56,0.853-4.267,2.56-5.973l156.16-156.16c3.413-3.413,8.533-3.413,11.947,0l23.893,23.893c1.707,1.707,2.56,3.413,2.56,5.973 s-0.853,4.267-2.56,5.973L81.92,467.328C80.213,469.035,77.653,469.888,75.093,469.888z M63.147,437.462l11.947,11.947 l144.213-143.36l-11.947-11.947L63.147,437.462z"></path>
                 <path d="M315.733,205.355c-2.56,0-4.267-0.853-5.973-2.56c-3.413-3.413-3.413-8.533,0-11.947L454.827,45.782 c3.413-3.413,8.533-3.413,11.947,0c3.413,3.413,3.413,8.533,0,11.947L321.707,202.795C320,204.502,318.293,205.355,315.733,205.355z "></path>
                 <path d="M383.147,451.115L383.147,451.115c-3.413,0-5.973-1.707-6.827-3.413c-30.72-46.08-53.76-77.653-71.68-95.573l-42.667-42.667 c-3.413-3.413-3.413-8.533,0-11.947l1.707-1.707c-0.853-9.387,0-23.893,8.533-32.427c5.12-5.12,12.8-9.387,18.773-11.947 c3.413-1.707,6.827-0.853,9.387,1.707l51.2,51.2l0,0c17.92,17.92,48.64,40.96,95.573,71.68c2.56,1.707,3.413,3.413,3.413,5.973 s-0.853,5.12-2.56,6.827l-0.853,0.853c-1.707,1.707-3.413,2.56-5.973,2.56c-10.24,0-19.627,3.413-27.307,8.533 c-12.8,9.387-21.333,24.747-21.333,41.813c0,2.56-0.853,4.267-2.56,5.973l-0.853,0.853 C388.267,450.262,385.707,451.115,383.147,451.115z M280.747,304.342l36.693,36.693c16.213,16.213,36.693,42.667,62.293,80.213 c5.12-13.653,13.653-26.453,27.307-34.987c5.12-3.413,10.24-5.973,15.36-7.68c-38.4-25.6-64.853-46.08-80.213-62.293l-46.933-46.933 c-4.267,2.56-7.68,4.267-8.533,5.973c-5.12,5.12-4.267,17.067-3.413,23.893C282.453,300.928,281.6,302.635,280.747,304.342z"></path>
-                <path d="M208.213,252.288c-2.56,0-4.267-0.853-5.973-2.56l-42.667-42.667c-30.72-30.72-60.587-52.907-93.867-69.973 c-2.56-0.853-4.267-3.413-4.267-5.973c0-2.56,0.853-5.12,2.56-7.68l0.853-0.853c0.853-1.707,3.413-2.56,5.12-2.56 c10.24,0,19.627-3.413,27.307-8.533c14.507-9.387,23.04-24.747,23.04-41.813c0-2.56,0.853-4.267,2.56-5.973l0.853-0.853 c2.56-1.707,5.12-2.56,7.68-2.56c2.56,0,5.12,1.707,5.973,4.267c17.067,33.28,39.253,63.147,70.827,94.72l51.2,51.2 c2.56,2.56,3.413,5.973,1.707,9.387c-2.56,5.973-6.827,14.507-11.947,18.773c-8.533,8.533-23.04,9.387-32.427,8.533l-1.707,1.707 C213.333,251.435,210.773,252.288,208.213,252.288L208.213,252.288z M93.867,132.822c27.307,16.213,52.053,36.693,78.507,63.147 l36.693,36.693c1.707-0.853,3.413-1.707,5.12-1.707c5.973,0,18.773,0.853,23.893-3.413c0.853-0.853,3.413-4.267,5.973-8.533 l-47.787-47.787c-25.6-25.6-46.08-51.2-62.293-78.507c-5.12,13.653-13.653,24.747-26.453,33.28 C103.253,128.555,98.133,131.115,93.867,132.822z"></path> </g></svg>            </a>
+                <path d="M208.213,252.288c-2.56,0-4.267-0.853-5.973-2.56l-42.667-42.667c-30.72-30.72-60.587-52.907-93.867-69.973 c-2.56-0.853-4.267-3.413-4.267-5.973c0-2.56,0.853-5.12,2.56-7.68l0.853-0.853c0.853-1.707,3.413-2.56,5.12-2.56 c10.24,0,19.627-3.413,27.307-8.533c14.507-9.387,23.04-24.747,23.04-41.813c0-2.56,0.853-4.267,2.56-5.973l0.853-0.853 c2.56-1.707,5.12-2.56,7.68-2.56c2.56,0,5.12,1.707,5.973,4.267c17.067,33.28,39.253,63.147,70.827,94.72l51.2,51.2 c2.56,2.56,3.413,5.973,1.707,9.387c-2.56,5.973-6.827,14.507-11.947,18.773c-8.533,8.533-23.04,9.387-32.427,8.533l-1.707,1.707 C213.333,251.435,210.773,252.288,208.213,252.288L208.213,252.288z M93.867,132.822c27.307,16.213,52.053,36.693,78.507,63.147 l36.693,36.693c1.707-0.853,3.413-1.707,5.12-1.707c5.973,0,18.773,0.853,23.893-3.413c0.853-0.853,3.413-4.267,5.973-8.533 l-47.787-47.787c-25.6-25.6-46.08-51.2-62.293-78.507c-5.12,13.653-13.653,24.747-26.453,33.28 C103.253,128.555,98.133,131.115,93.867,132.822z"></path>
+            </g>
+        </svg>
+    </a>
             <ul class="bem-navbar__menu">
                 <li>contato@oficina.com</li>
-                <li>11-99999-9999</li>
+                <li>11-9999-88888</li>
             </ul>
         </header>
         <ul class="bem-navbar__menu">
@@ -87,14 +91,14 @@
     <main>
         <section class="bem-hero">
             <div class="bem-hero__titulo">
-                <h1>Oficina Senac</h1>
+                <h1>Ofica Senac</h1>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere itaque adipisci iste optio inventore incidunt quod natus. Cum quasi hic sapiente aut qui! Maiores dolore alias assumenda distinctio, vel ab?</p>
                 <a href="#contato" class="bem-btn bem-btn--primary">
                     Orçamento
                 </a>"
             </div>
             <img src="/assets/imagens/carro/front-hero-1.png.webp"
-            width="400px" alt="Carro vermelho"
+            width="500px" alt="Carro vermelho"
             class="bem-hero_imagem">
         </section>
     <nav class="bem-navbar--secundaria bem-container">
@@ -105,13 +109,16 @@
                 <a href="#" class="bem-navbar__link bem-navbar__link--active">Home</a>
             </li>
             <li class="bem-navbar__item">
-                <a href="#sobre" class="bem-navbar__link">Sobre</a>
-            </li>
-            <li class="bem-navbar__item">
                 <a href="#servicos" class="bem-navbar__link">Serviços</a>
             </li>
             <li class="bem-navbar__item">
+                <a href="#sobre" class="bem-navbar__link">Sobre</a>
+            </li>
+            <li class="bem-navbar__item">
                 <a href="#equipe" class="bem-navbar__link">Equipe</a>
+            </li>
+            <li class="bem-navbar__item">
+                <a href="#projetos" class="bem-navbar__link">Projetos</a>
             </li>
             <li class="bem-navbar__item">
                 <a href="#contato" class="bem-navbar__link">Contato</a>
@@ -165,8 +172,24 @@
             </div>
         </section>
         <section class="bem-container" id="sobre">
-
-        </section>      
+            <div class="sobre-img">
+                <img src="assets/imagens/logo/logo-os.webp" alt="Imagem da Marca da oficina">
+            </div>
+            <div class="sobre-descricao">
+                <h2 class="bem-titulo-h2 bem-text-secondary">Sobre</h2>
+                <p class="bem-text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sapiente iure voluptatum saepe non maxime dolor possimus reprehenderit impedit numquam provident necessitatibus et eos, explicabo officiis pariatur unde inventore fugit?</p>
+            </div>
+        </section> 
+        <section class="bem-container" id="projetos">
+            <div class="img-comp-container">
+            <div class="img-comp-img">
+                <img src="img_snow.jpg" width="300" height="200">
+            </div>
+            <div class="img-comp-img img-comp-overlay">
+                <img src="img_forest.jpg" width="300" height="200">
+            </div>
+            </div>
+        </section>     
         <section class="bem-container" id="equipe">
 
         </section>
@@ -177,5 +200,6 @@
      <footer>
 
      </footer>
+     <script src="assets/js/script.js"></script>
 </body>
 </html>
