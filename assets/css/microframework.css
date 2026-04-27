@@ -84,6 +84,19 @@ header{
   z-index: 1001;
   width: 100px;
 }
+.icon-marcas{
+  width: 100px;
+}
+.container-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50px;
+  width: 100%;
+  margin: var(--bem-spacing-sm) 0;
+  padding: var(--bem-spacing-sm);
+}
 .bem-hero{
   /*relativo para c ontrolar a posição absoluta dos filhos  */
   position: relative;
