@@ -512,9 +512,18 @@ header{
   /*set the appearance of the slider:*/
   width: 80px;
   height: 40px;
-  background-color: #000000;
+  background-image: url(../imagens/imagem-projetos/seta.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
   border-radius: 100px;
-  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  animation: esquerda-direita .2s 3;
+}
+/* keyframes */
+@keyframes esquerda-direita{
+  0% {left: 111px;}
+  50% {left: 108px;}
+  100% {left: 111px;}
 }
 .img-comp-overlay::after{
   content: "Depois";
