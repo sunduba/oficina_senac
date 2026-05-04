@@ -185,6 +185,7 @@ header{
   max-width:1200px;
   margin:0 auto;
   padding:0 var(--bem-spacing-md);
+  clear: both; /* Added to prevent float issues from preceding sections */
 }
 .bem-container--fluid{ max-width:100% }
 .bem-container--narrow{ max-width:600px}
@@ -617,8 +618,134 @@ header{
   font-weight: 600px;
 }
 
-@media only screen and (max-width: 600px) {
-  .columns {
-    width: 100%;
+/* Carousel Equipe */
+.bem-carousel {
+  overflow: hidden;
+  padding: var(--bem-spacing-xl) 0 100px 0; /* Aumentado padding inferior para o overlay deslocado */
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.bem-carousel__track {
+  display: flex;
+  gap: var(--bem-spacing-lg);
+  width: max-content;
+  animation: bem-scroll 30s linear infinite;
+}
+
+.bem-carousel__track:hover {
+  animation-play-state: paused;
+}
+
+.bem-carousel__item {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+/* Card de Equipe Moderno */
+
+.bem-card--equipe {
+  position: relative;
+  /* overflow: hidden; */ /* Removido para permitir o painel para fora */
+  height: 450px;
+  border-radius: var(--bem-radius-lg);
+  box-shadow: var(--bem-shadow-md);
+  background: var(--bem-light);
+}
+
+.bem-card--equipe .bem-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-radius: var(--bem-radius-lg); /* Mantém os cantos arredondados */
+}
+
+.bem-card--equipe:hover .bem-card__image {
+  transform: scale(1.05);
+}
+
+.bem-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  background: #f8f9fa; /* Fundo sólido */
+  padding: var(--bem-spacing-md);
+  padding-right: var(--bem-spacing-xl);
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+  z-index: 10;
+  border-top-right-radius: 20px;
+  height: 130px; /* Altura padronizada */
+  transform: translateY(50%); /* Metade para fora */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bem-card__title--equipe {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--bem-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.bem-card__subtitle--equipe {
+  font-size: 0.85rem;
+  color: var(--bem-primary);
+  font-weight: 600;
+  margin: 4px 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bem-card__socials {
+  display: flex;
+  gap: 10px;
+}
+
+.bem-card__social-icon {
+  width: 32px;
+  height: 32px;
+  background: #222; /* Fundo mais escuro para destaque */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.bem-card__social-icon:hover {
+  background: var(--bem-tertiary);
+  transform: translateY(-3px);
+}
+
+.bem-card__social-icon svg {
+  width: 18px !important;
+  height: 18px !important;
+  fill: white !important;
+  display: block;
+}
+
+/* Garante que SVGs diretos também sigam o padrão */
+.bem-card__socials svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+@keyframes bem-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media(max-width: 768px) {
+  .bem-carousel__track {
+    animation-duration: 15s;
   }
 }
+
