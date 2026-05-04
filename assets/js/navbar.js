@@ -46,7 +46,7 @@ const htmlNavbarPrincipal = `
             </a>
             <ul class="bem-navbar__menu">
                 <li>contato@oficina.com</li>
-                <li>11-9999-88888</li>
+                <li>(11) 99999-9999</li>
             </ul>
         </header>
         <ul class="bem-navbar__menu">
