@@ -63,6 +63,7 @@ body{
   background:var(--bem-light);
   transition:background .25s, color .25s;
   cursor: url(../imagens/cursor/cursor.svg), auto;
+  padding-top: 70px; /* Compensation for fixed primary navbar */
 }
 
 a{
@@ -341,15 +342,16 @@ header{
 }
 .bem-alert__close:hover{ opacity:1 }
 .bem-navbar{
- display:flex;
+  display:flex;
   align-items:center;
   justify-content: space-evenly;
   padding:var(--bem-spacing-md) var(--bem-spacing-lg);
   box-shadow:var(--bem-shadow-sm);
   transition:background .25s;
-  position:sticky;
+  position:fixed; /* Changed to fixed as requested */
   top:0; 
-  z-index:100;
+  left:0;
+  z-index:1000; /* Increased to stay above everything */
   width: 100%;
   background-color: var(--bem-primary);
   color: var(--bem-secondary);
@@ -361,9 +363,26 @@ header{
   padding:var(--bem-spacing-md) var(--bem-spacing-lg);
   box-shadow:var(--bem-shadow-sm);
   transition:background .25s;
-  position:sticky; top: 70px; z-index:10;
+  position:sticky; 
+  top: 70px; /* Offset to stay below fixed primary navbar */
+  z-index:900; /* High but lower than primary */
   background-color: var(--bem-primary);
   color: var(--bem-secondary);
+}
+
+/* Ensure containers themselves handle positioning to avoid context loss */
+#navbar-principal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+#navbar-secundaria {
+  position: sticky;
+  top: 70px;
+  z-index: 900;
 }
 .bem-navbar--dark{ background-color:var(--bem-dark);color:#fff }
 .bem-navbar__brand{ font-size:1.5rem;font-weight:700;text-decoration:none;color:inherit; position: relative; }
@@ -454,7 +473,7 @@ header{
   .bem-hero__titulo{left: 0; width: 100%;}
   .bem-container--narrow{width: 100%; max-width: 768px;}
   .bem-hero_imagem{display: none;}
-  .bem-navbar--secundaria{position:fixed; top:0px;}
+  .bem-navbar--secundaria{position:fixed; top:0px; z-index: 1100;}
   .bem-logo{
     display: block;
     position: fixed;
