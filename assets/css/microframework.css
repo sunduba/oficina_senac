@@ -772,3 +772,374 @@ header{
   align-items: center;
   gap: 15px;
 }
+
+/* ================================================
+   COMPONENTE: FAQ — Acordeão com details/summary
+   ================================================ */
+.bem-faq {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--bem-spacing-sm);
+}
+
+.bem-faq__item {
+  background-color: var(--bem-surface);
+  border-radius: var(--bem-radius-md);
+  border: 1px solid var(--bem-border);
+  border-left: 4px solid var(--bem-tertiary);
+  box-shadow: var(--bem-shadow-sm);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.bem-faq__item:hover {
+  box-shadow: var(--bem-shadow-md);
+}
+
+.bem-faq__item[open] {
+  box-shadow: var(--bem-shadow-md);
+}
+
+.bem-faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bem-spacing-md) var(--bem-spacing-lg);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bem-dark);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  gap: var(--bem-spacing-md);
+  transition: color 0.2s ease;
+}
+
+.bem-faq__question::-webkit-details-marker { display: none; }
+
+.bem-faq__question::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--bem-tertiary);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+.bem-faq__item[open] .bem-faq__question::after {
+  transform: rotate(45deg);
+}
+
+.bem-faq__item[open] .bem-faq__question {
+  color: var(--bem-primary);
+}
+
+.bem-faq__answer {
+  padding: 0 var(--bem-spacing-lg) var(--bem-spacing-lg) var(--bem-spacing-lg);
+  color: var(--bem-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  animation: bem-slide-up 0.3s ease forwards;
+}
+
+/* Sobrescreve o padding global de p apenas dentro do FAQ */
+.bem-faq__answer p {
+  padding: 0;
+  color: var(--bem-text-muted);
+}
+
+/* ================================================
+   COMPONENTE: Página de Contato
+   ================================================ */
+
+/* Layout grid: formulário + informações */
+.bem-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--bem-spacing-xl);
+  width: 100%;
+  align-items: start;
+}
+
+/* Hero compacto reutilizável */
+.bem-hero--compact {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  background-image: url(../imagens/carro/fundo-hero.jpg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #0f172a;
+  color: var(--bem-light);
+  margin-bottom: var(--bem-spacing-xl);
+}
+
+.bem-hero--compact::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,26,27,0.85) 0%, rgba(26,26,27,0.5) 100%);
+}
+
+.bem-hero--compact__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.bem-hero--compact__content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--bem-spacing-sm);
+}
+
+.bem-hero--compact__content p {
+  padding: 0;
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+}
+
+/* Bloco do formulário */
+.bem-contact-form-block {
+  background: var(--bem-surface);
+  border-radius: var(--bem-radius-lg);
+  padding: var(--bem-spacing-xl);
+  box-shadow: var(--bem-shadow-lg);
+  border-top: 4px solid var(--bem-tertiary);
+}
+
+.bem-contact-form-block h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bem-dark);
+  margin-bottom: var(--bem-spacing-lg);
+}
+
+/* Input com label flutuante */
+.bem-form__field {
+  position: relative;
+  margin-bottom: var(--bem-spacing-md);
+}
+
+.bem-form__field-label {
+  position: absolute;
+  top: 50%;
+  left: var(--bem-spacing-md);
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: var(--bem-text-muted);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: var(--bem-surface);
+  padding: 0 4px;
+}
+
+.bem-form__field-input,
+.bem-form__field-textarea,
+.bem-form__field-select {
+  width: 100%;
+  padding: var(--bem-spacing-md);
+  border: 2px solid var(--bem-border);
+  border-radius: var(--bem-radius-md);
+  font-size: 1rem;
+  font-family: inherit;
+  background: var(--bem-surface);
+  color: var(--bem-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.bem-form__field-input:focus,
+.bem-form__field-textarea:focus,
+.bem-form__field-select:focus {
+  border-color: var(--bem-tertiary);
+  box-shadow: 0 0 0 3px rgba(242, 153, 74, 0.15);
+}
+
+.bem-form__field-input:focus + .bem-form__field-label,
+.bem-form__field-input:not(:placeholder-shown) + .bem-form__field-label,
+.bem-form__field-select:focus + .bem-form__field-label {
+  top: 0;
+  font-size: 0.75rem;
+  color: var(--bem-tertiary);
+  font-weight: 600;
+}
+
+.bem-form__field-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.bem-form__field--textarea .bem-form__field-label {
+  top: var(--bem-spacing-md);
+  transform: none;
+}
+
+.bem-form__field-textarea:focus + .bem-form__field-label,
+.bem-form__field-textarea:not(:placeholder-shown) + .bem-form__field-label {
+  top: -10px;
+  font-size: 0.75rem;
+  color: var(--bem-tertiary);
+  font-weight: 600;
+}
+
+.bem-form__field-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f2994a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--bem-spacing-md) center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.bem-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--bem-spacing-md);
+}
+
+/* Bloco de informações de contato */
+.bem-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bem-spacing-lg);
+}
+
+.bem-contact-info__card {
+  background: var(--bem-primary);
+  border-radius: var(--bem-radius-lg);
+  padding: var(--bem-spacing-xl);
+  box-shadow: var(--bem-shadow-lg);
+}
+
+.bem-contact-info__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: var(--bem-spacing-sm);
+}
+
+.bem-contact-info__subtitle {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  padding: 0;
+  margin-bottom: var(--bem-spacing-lg);
+}
+
+.bem-contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bem-spacing-md);
+  padding: var(--bem-spacing-sm) 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.bem-contact-info__item:last-child {
+  border-bottom: none;
+}
+
+.bem-contact-info__icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(242, 153, 74, 0.15);
+  border-radius: var(--bem-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.bem-contact-info__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.bem-contact-info__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bem-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bem-contact-info__value {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  padding: 0;
+  margin-top: 2px;
+}
+
+/* Mapa placeholder */
+.bem-contact-map {
+  background: var(--bem-surface);
+  border-radius: var(--bem-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--bem-shadow-md);
+  border: 2px solid var(--bem-border);
+}
+
+.bem-contact-map iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  display: block;
+}
+
+/* Alerta de sucesso no envio */
+.bem-form__success {
+  display: none;
+  text-align: center;
+  padding: var(--bem-spacing-xl);
+  animation: bem-scale-up 0.4s ease forwards;
+}
+
+.bem-form__success.bem-form__success--ativo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--bem-spacing-md);
+}
+
+.bem-form__success-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.bem-form__success-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--bem-dark);
+}
+
+.bem-form__success-text {
+  padding: 0;
+  color: var(--bem-text-muted);
+}
+
+/* Responsividade do contato */
+@media (max-width: 768px) {
+  .bem-contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .bem-form__row {
+    grid-template-columns: 1fr;
+  }
+  .bem-hero--compact__content h1 {
+    font-size: 1.75rem;
+  }
+}

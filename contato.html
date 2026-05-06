@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oficina Senac - Contato</title>
-    <meta name="description" content="Oficina de Desenvolvimento de sites para carros">
-    <meta name="keywords" content="keyword1, keyword2">
-    <meta property="og:title" content="Page Title">
-    <meta property="og:description" content="Page description">
+    <meta name="description" content="Entre em contato com a Oficina Senac. Agende seu serviço, solicite um orçamento ou tire suas dúvidas. Estamos prontos para atender você.">
+    <meta name="keywords" content="oficina mecânica, contato, agendamento, orçamento, São Paulo">
+    <meta property="og:title" content="Oficina Senac — Fale Conosco">
+    <meta property="og:description" content="Entre em contato com a Oficina Senac e agende seu serviço automotivo.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.example.com">
-    <meta property="og:image" content="https://www.example.com/image.jpg">
+    <meta property="og:url" content="https://www.oficina-senac.com.br/contato.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Page Title">
-    <meta name="twitter:description" content="Page description">
-    <meta name="twitter:image" content="https://www.example.com/image.jpg">
+    <meta name="twitter:title" content="Oficina Senac — Fale Conosco">
+    <meta name="twitter:description" content="Entre em contato com a Oficina Senac e agende seu serviço automotivo.">
 
     <link rel="preload" href="assets/css/microframework.css" as="style"
             onload="this.rel='stylesheet'">
@@ -26,12 +24,223 @@
     <div id="navbar-principal"></div>
 <main>
     <div id="navbar-secundaria"></div>
-        <section class="bem-container" id="servicos">
-            <h2 class="bem-titulo-h2">Contato</h2>
-            <div class="bem-grid-auto">
-            </div>
-        </section>
 
+    <!-- Hero Compacto -->
+    <div class="bem-hero--compact">
+        <div class="bem-hero--compact__content">
+            <h1>Entre em Contato</h1>
+            <p>Agende seu serviço, solicite um orçamento ou tire suas dúvidas</p>
+        </div>
+    </div>
+
+    <!-- Seção principal de contato -->
+    <section class="bem-container revelar" id="contato" style="margin: 0 auto 60px; padding-top: 20px;">
+
+        <div class="bem-contact-grid">
+
+            <!-- COLUNA ESQUERDA: Formulário -->
+            <div class="bem-contact-form-block">
+                <h2>Envie sua Mensagem</h2>
+
+                <!-- Formulário -->
+                <form class="bem-form" id="form-contato" novalidate>
+
+                    <!-- Linha: Nome + Sobrenome -->
+                    <div class="bem-form__row">
+                        <div class="bem-form__field">
+                            <input
+                                type="text"
+                                class="bem-form__field-input"
+                                id="campo-nome"
+                                name="nome"
+                                placeholder=" "
+                                required
+                                autocomplete="given-name"
+                            >
+                            <label for="campo-nome" class="bem-form__field-label">Nome *</label>
+                        </div>
+                        <div class="bem-form__field">
+                            <input
+                                type="text"
+                                class="bem-form__field-input"
+                                id="campo-sobrenome"
+                                name="sobrenome"
+                                placeholder=" "
+                                autocomplete="family-name"
+                            >
+                            <label for="campo-sobrenome" class="bem-form__field-label">Sobrenome</label>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bem-form__field">
+                        <input
+                            type="email"
+                            class="bem-form__field-input"
+                            id="campo-email"
+                            name="email"
+                            placeholder=" "
+                            required
+                            autocomplete="email"
+                        >
+                        <label for="campo-email" class="bem-form__field-label">E-mail *</label>
+                    </div>
+
+                    <!-- Telefone -->
+                    <div class="bem-form__field">
+                        <input
+                            type="tel"
+                            class="bem-form__field-input"
+                            id="campo-telefone"
+                            name="telefone"
+                            placeholder=" "
+                            autocomplete="tel"
+                        >
+                        <label for="campo-telefone" class="bem-form__field-label">Telefone / WhatsApp</label>
+                    </div>
+
+                    <!-- Serviço de interesse -->
+                    <div class="bem-form__field">
+                        <select
+                            class="bem-form__field-select"
+                            id="campo-servico"
+                            name="servico"
+                            required
+                        >
+                            <option value="" disabled selected></option>
+                            <option value="troca-oleo">Troca de Óleo</option>
+                            <option value="alinhamento">Alinhamento e Balanceamento</option>
+                            <option value="pintura">Pintura e Funilaria</option>
+                            <option value="diagnostico">Diagnóstico Eletrônico</option>
+                            <option value="revisao">Revisão Completa</option>
+                            <option value="freios">Freios e Suspensão</option>
+                            <option value="correia">Troca de Correia Dentada</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <label for="campo-servico" class="bem-form__field-label">Serviço de interesse *</label>
+                    </div>
+
+                    <!-- Mensagem -->
+                    <div class="bem-form__field bem-form__field--textarea">
+                        <textarea
+                            class="bem-form__field-textarea"
+                            id="campo-mensagem"
+                            name="mensagem"
+                            placeholder=" "
+                            rows="5"
+                            required
+                        ></textarea>
+                        <label for="campo-mensagem" class="bem-form__field-label">Descreva o problema ou serviço desejado *</label>
+                    </div>
+
+                    <!-- Checkbox de aceite -->
+                    <div class="bem-form__checkbox" style="margin-bottom: var(--bem-spacing-sm);">
+                        <input type="checkbox" id="aceite-contato" name="aceite" required>
+                        <label for="aceite-contato" style="font-size: 0.85rem; color: var(--bem-text-muted);">
+                            Concordo em receber retorno da Oficina Senac sobre minha solicitação.
+                        </label>
+                    </div>
+
+                    <!-- Botão de envio -->
+                    <button
+                        type="submit"
+                        class="bem-btn bem-btn--primary bem-btn--block"
+                        id="btn-enviar-contato"
+                        style="margin-top: var(--bem-spacing-sm);"
+                    >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Enviar Mensagem
+                    </button>
+                </form>
+
+                <!-- Mensagem de sucesso (exibida após envio) -->
+                <div class="bem-form__success" id="mensagem-sucesso">
+                    <div class="bem-form__success-icon">✅</div>
+                    <p class="bem-form__success-title">Mensagem enviada com sucesso!</p>
+                    <p class="bem-form__success-text">Nossa equipe entrará em contato em até 24 horas úteis. Obrigado!</p>
+                    <button
+                        class="bem-btn bem-btn--outline"
+                        id="btn-novo-contato"
+                        onclick="reiniciarFormulario()"
+                        style="margin-top: 0;"
+                    >
+                        Enviar nova mensagem
+                    </button>
+                </div>
+            </div>
+
+            <!-- COLUNA DIREITA: Informações de contato -->
+            <div class="bem-contact-info">
+
+                <!-- Card de informações -->
+                <div class="bem-contact-info__card">
+                    <h2 class="bem-contact-info__title">Fale Conosco</h2>
+                    <p class="bem-contact-info__subtitle">
+                        Nossa equipe está pronta para te ajudar de segunda a sábado.
+                    </p>
+
+                    <div class="bem-contact-info__item">
+                        <div class="bem-contact-info__icon">📞</div>
+                        <div class="bem-contact-info__text">
+                            <span class="bem-contact-info__label">Telefone</span>
+                            <p class="bem-contact-info__value">(11) 99999-9999</p>
+                        </div>
+                    </div>
+
+                    <div class="bem-contact-info__item">
+                        <div class="bem-contact-info__icon">📧</div>
+                        <div class="bem-contact-info__text">
+                            <span class="bem-contact-info__label">E-mail</span>
+                            <p class="bem-contact-info__value">contato@oficina-senac.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="bem-contact-info__item">
+                        <div class="bem-contact-info__icon">📍</div>
+                        <div class="bem-contact-info__text">
+                            <span class="bem-contact-info__label">Endereço</span>
+                            <p class="bem-contact-info__value">Rua Exemplo, 123 — São Paulo, SP</p>
+                        </div>
+                    </div>
+
+                    <div class="bem-contact-info__item">
+                        <div class="bem-contact-info__icon">🕐</div>
+                        <div class="bem-contact-info__text">
+                            <span class="bem-contact-info__label">Horário de Funcionamento</span>
+                            <p class="bem-contact-info__value">Seg – Sex: 08h às 18h</p>
+                            <p class="bem-contact-info__value">Sábado: 08h às 13h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapa -->
+                <div class="bem-contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.9770097553694!2d-46.65455!3d-23.5622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQzLjkiUyA0NsKwMzknMTYuNCJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização da Oficina Senac"
+                    ></iframe>
+                </div>
+
+                <!-- FAQ rápido -->
+                <div style="background: var(--bem-light); border-radius: var(--bem-radius-lg); padding: var(--bem-spacing-lg); border-left: 4px solid var(--bem-tertiary);">
+                    <h3 style="font-size: 1rem; font-weight: 700; color: var(--bem-dark); margin-bottom: var(--bem-spacing-sm);">
+                        💡 Dúvidas frequentes?
+                    </h3>
+                    <p style="padding: 0; font-size: 0.9rem; color: var(--bem-text-muted); line-height: 1.6;">
+                        Confira nossa seção de
+                        <a href="index.html#faq" style="color: var(--bem-tertiary); font-weight: 600;">Perguntas Frequentes</a>
+                        para respostas rápidas sobre serviços, garantias e agendamentos.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 </main>
      <footer id="footer-container">
@@ -39,5 +248,72 @@
      <script src="assets/js/footer.js"></script>
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/script.js"></script>
+
+<script>
+// Lógica do formulário de contato
+(function() {
+    const form = document.getElementById('form-contato');
+    const mensagemSucesso = document.getElementById('mensagem-sucesso');
+
+    if (!form) return;
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Validação básica
+        const campos = form.querySelectorAll('[required]');
+        let valido = true;
+
+        campos.forEach(function(campo) {
+            if (!campo.value.trim() || (campo.type === 'checkbox' && !campo.checked)) {
+                campo.style.borderColor = 'var(--bem-danger)';
+                valido = false;
+            } else {
+                campo.style.borderColor = '';
+            }
+        });
+
+        if (!valido) {
+            const primeiroCampoInvalido = form.querySelector('[required]:invalid, [style*="bem-danger"]');
+            if (primeiroCampoInvalido) primeiroCampoInvalido.focus();
+            return;
+        }
+
+        // Simula envio (substituir por fetch real)
+        const btnEnviar = document.getElementById('btn-enviar-contato');
+        btnEnviar.textContent = 'Enviando...';
+        btnEnviar.disabled = true;
+
+        setTimeout(function() {
+            form.style.display = 'none';
+            mensagemSucesso.classList.add('bem-form__success--ativo');
+        }, 1200);
+    });
+
+    // Feedback visual ao focar
+    form.querySelectorAll('input, textarea, select').forEach(function(el) {
+        el.addEventListener('input', function() {
+            this.style.borderColor = '';
+        });
+    });
+})();
+
+function reiniciarFormulario() {
+    const form = document.getElementById('form-contato');
+    const mensagemSucesso = document.getElementById('mensagem-sucesso');
+    const btnEnviar = document.getElementById('btn-enviar-contato');
+
+    form.reset();
+    form.style.display = '';
+    mensagemSucesso.classList.remove('bem-form__success--ativo');
+    btnEnviar.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Enviar Mensagem
+    `;
+    btnEnviar.disabled = false;
+}
+</script>
 </body>
 </html>
