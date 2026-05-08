@@ -248,6 +248,16 @@
      <script src="assets/js/footer.js"></script>
 <script src="assets/js/navbar.js"></script>
 <script src="assets/js/script.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "pLKIe-aoMa95inkEw",
+      });
+   })();
+</script>
 
 <script>
 // Lógica do formulário de contato
@@ -281,6 +291,9 @@
 
         // Simula envio (substituir por fetch real)
         const btnEnviar = document.getElementById('btn-enviar-contato');
+        emailjs.sendForm('service_xxxxxxx', 'template_xxxxxxx', this)
+                    .then(() => {
+
         btnEnviar.textContent = 'Enviando...';
         btnEnviar.disabled = true;
 
@@ -288,6 +301,12 @@
             form.style.display = 'none';
             mensagemSucesso.classList.add('bem-form__success--ativo');
         }, 1200);
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+
+
+
     });
 
     // Feedback visual ao focar
