@@ -98,7 +98,7 @@ const htmlNavbarSecundaria = `
                 <a href="index.html#faq" class="bem-navbar__link">FAQ</a>
             </li>
             <li class="bem-navbar__item">
-                <a href="contato.html" class="bem-navbar__link">Contato</a>
+                <a href="contato.php" class="bem-navbar__link">Contato</a>
             </li>
         </ul>
     </nav>

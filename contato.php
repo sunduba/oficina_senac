@@ -264,7 +264,7 @@
 (function() {
     const form = document.getElementById('form-contato');
     const mensagemSucesso = document.getElementById('mensagem-sucesso');
-
+    console.log(form);
     if (!form) return;
 
     form.addEventListener('submit', function(e) {
@@ -291,19 +291,33 @@
 
         // Simula envio (substituir por fetch real)
         const btnEnviar = document.getElementById('btn-enviar-contato');
-        emailjs.sendForm('service_xxxxxxx', 'template_xxxxxxx', this)
-                    .then(() => {
+        // emailjs.sendForm('service_xxxxxxx', 'template_xxxxxxx', this)
 
-        btnEnviar.textContent = 'Enviando...';
-        btnEnviar.disabled = true;
+        fetch('enviar_email.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome : document.getElementById('campo-nome').value,
+                sobrenome : document.getElementById('campo-sobrenome').value,
+                email : document.getElementById('campo-email').value,
+                telefone : document.getElementById('campo-telefone').value,
+                servico : document.getElementById('campo-servico').value,
+                mensagem : document.getElementById('campo-mensagem').value,
+            })
+        })
+        .then(() => {
+            btnEnviar.textContent = 'Enviando...';
+            btnEnviar.disabled = true;
 
-        setTimeout(function() {
-            form.style.display = 'none';
-            mensagemSucesso.classList.add('bem-form__success--ativo');
-        }, 1200);
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
+            setTimeout(function() {
+                form.style.display = 'none';
+                mensagemSucesso.classList.add('bem-form__success--ativo');
+            }, 1200);
+            }, (error) => {
+                console.log('FAILED...', error);
+            });
 
 
 
